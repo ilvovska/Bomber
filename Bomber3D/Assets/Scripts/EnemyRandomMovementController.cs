@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = System.Random;
 
@@ -21,8 +19,8 @@ public class EnemyRandomMovementController : MonoBehaviour
         if (movementController.IsMoving) return;
 
         bool moved;
-        var directions = Enum.GetValues(typeof(MovementController.Direction))
-            .Cast<MovementController.Direction>()
+        var directions = Enum.GetValues(typeof(Direction.Type))
+            .Cast<Direction.Type>()
             .ToList();
         
         do
