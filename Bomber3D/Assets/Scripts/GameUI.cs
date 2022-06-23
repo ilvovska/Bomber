@@ -3,7 +3,7 @@ using SimpleInputNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameUIController: MonoBehaviour
+public class GameUI: MonoBehaviour
 {
     public event Action OnBombClick;
 

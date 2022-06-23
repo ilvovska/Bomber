@@ -13,8 +13,8 @@ TagManager:
   - UI
   - NonWalkable
   - Explodable
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

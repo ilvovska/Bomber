@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Deadly:MonoBehaviour
+public class Deadly : MonoBehaviour
 {
     public event Action OnDie;
 

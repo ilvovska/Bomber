@@ -644,8 +644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelControllerPrefab: {fileID: 1620732884357878798, guid: 6a04816ffc0a1ca4a9fa8d0853fa6541,
     type: 3}
-  gameUIController: {fileID: 1100546273}
-  menuController: {fileID: 1624292660}
+  gameUI: {fileID: 1100546273}
+  menuUI: {fileID: 1624292660}
 --- !u!4 &930936099
 Transform:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [SerializeField] private float moveTime;
     [SerializeField] private LayerMask layers;
@@ -18,11 +18,11 @@ public class MovementController : MonoBehaviour
 
         if (Physics.Linecast(transform.position, newPosition, layers)) return false;
 
-        StartCoroutine(Movement(newPosition));
+        StartCoroutine(Move(newPosition));
         return true;
     }
 
-    private IEnumerator Movement(Vector3 newPosition)
+    private IEnumerator Move(Vector3 newPosition)
     {
        isMoving = true;
         var timer = 0f;

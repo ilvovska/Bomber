@@ -20,10 +20,10 @@ public class LevelController : MonoBehaviour
             enemy.OnDie += OnEnemyDie;
     }
 
-    public void Initialize(GameUIController gameUIController)
+    public void Initialize(GameUI gameUI)
     {
-        player.Initialize(gameUIController.Joystick);
-        gameUIController.OnBombClick += OnBombClick;
+        player.Initialize(gameUI.Joystick);
+        gameUI.OnBombClick += OnBombClick;
     }
 
     private void OnBombClick()

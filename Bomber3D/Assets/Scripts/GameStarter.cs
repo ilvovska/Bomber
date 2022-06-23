@@ -4,30 +4,30 @@ using UnityEngine;
 public class GameStarter : MonoBehaviour
 {
     [SerializeField] private LevelController levelControllerPrefab;
-    [SerializeField] private GameUIController gameUIController;
-    [SerializeField] private MenuController menuController;
+    [SerializeField] private GameUI gameUI;
+    [SerializeField] private MenuUI menuUI;
 
     private void Start()
     {
-        menuController.OnStartClick += StartGame;
+        menuUI.OnStartClick += StartGame;
     }
 
     private void StartGame()
     {
         var levelController = Instantiate(levelControllerPrefab);
-        levelController.Initialize(gameUIController);
+        levelController.Initialize(gameUI);
         levelController.OnPlayerDead += OnPlayerDead;
         levelController.OnEnemiesDead += OnEnemiesDead;
         
-        menuController.gameObject.SetActive(false);
-        gameUIController.gameObject.SetActive(true);
+        menuUI.gameObject.SetActive(false);
+        gameUI.gameObject.SetActive(true);
     }
 
     private void EndGame(bool winGame)
     {
-        menuController.gameObject.SetActive(true);
-        menuController.SetWinText(winGame);
-        gameUIController.gameObject.SetActive(false);
+        menuUI.gameObject.SetActive(true);
+        menuUI.SetWinText(winGame);
+        gameUI.gameObject.SetActive(false);
     }
     
     private void OnEnemiesDead() => EndGame(true);

@@ -1,9 +1,10 @@
 using SimpleInputNamespace;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : Deadly
 {
-    [SerializeField] private MovementController movementController;
+    [FormerlySerializedAs("movementController")] [SerializeField] private Movement movement;
 
     private Joystick joystick;
 
@@ -11,7 +12,7 @@ public class Player : Deadly
 
     private void Update()
     {
-        if (!movementController.IsMoving && joystick.Value.magnitude > 0.5)
-            movementController.Move(Direction.Vector2ToDirection(joystick.Value));
+        if (!movement.IsMoving && joystick.Value.magnitude > 0.5)
+            movement.Move(Direction.Vector2ToDirection(joystick.Value));
     }
 }

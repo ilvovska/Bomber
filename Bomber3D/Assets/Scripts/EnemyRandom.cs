@@ -3,9 +3,9 @@ using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
-public class EnemyRandomMovementController : Enemy
+public class EnemyRandom : Enemy
 {
-    [SerializeField] private MovementController movementController;
+    [SerializeField] private Movement movement;
 
     private Random random;
 
@@ -16,7 +16,7 @@ public class EnemyRandomMovementController : Enemy
 
     private void Update()
     {
-        if (movementController.IsMoving) return;
+        if (movement.IsMoving) return;
 
         bool moved;
         var directions = Enum.GetValues(typeof(Direction.Type))
@@ -26,7 +26,7 @@ public class EnemyRandomMovementController : Enemy
         do
         {
             var directionIndex = random.Next(directions.Count);
-            moved = movementController.Move(directions[directionIndex]);
+            moved = movement.Move(directions[directionIndex]);
             directions.RemoveAt(directionIndex);
         } while (!moved && directions.Count > 0);
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MenuController : MonoBehaviour
+public class MenuUI : MonoBehaviour
 {
     private const string winText = "Winner!";
     private const string loseText = "Loser!";
