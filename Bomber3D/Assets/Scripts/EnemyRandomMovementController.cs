@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
-public class EnemyRandomMovementController : MonoBehaviour
+public class EnemyRandomMovementController : Enemy
 {
     [SerializeField] private MovementController movementController;
 

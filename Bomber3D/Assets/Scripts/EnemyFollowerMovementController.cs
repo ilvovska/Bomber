@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyFollowerMovementController : MonoBehaviour
+public class EnemyFollowerMovementController : Enemy
 {
     [SerializeField] private MovementController movementController;
     [SerializeField] private Transform player;
@@ -9,7 +9,7 @@ public class EnemyFollowerMovementController : MonoBehaviour
     {
         if (movementController.IsMoving) return;
         
-        var direction = (player.position - transform.position).normalized;
+        var direction = (transform.position - player.position).normalized;
         movementController.Move(Direction.Vector2ToDirection(direction));
     }
 }

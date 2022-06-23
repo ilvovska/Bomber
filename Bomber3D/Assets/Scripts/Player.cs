@@ -1,14 +1,17 @@
 using SimpleInputNamespace;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour
+public class Player : Deadly
 {
     [SerializeField] private MovementController movementController;
-    [SerializeField] private Joystick joystick;
+
+    private Joystick joystick;
+
+    public void Initialize(Joystick joystick) => this.joystick = joystick;
 
     private void Update()
     {
-        if (joystick.Value.magnitude > 0.5)
+        if (!movementController.IsMoving && joystick.Value.magnitude > 0.5)
             movementController.Move(Direction.Vector2ToDirection(joystick.Value));
     }
 }

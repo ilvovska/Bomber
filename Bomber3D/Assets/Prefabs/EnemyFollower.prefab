@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8460180597434914040}
   - component: {fileID: 7788336003554348272}
   - component: {fileID: 7786187833446724912}
-  m_Layer: 0
+  - component: {fileID: -2555340948071473775}
+  - component: {fileID: 4482565788254893682}
+  m_Layer: 7
   m_Name: EnemyFollower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,6 +66,32 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 192
+--- !u!114 &-2555340948071473775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245267764376666970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f9e4fcf3df4d0f825e9250dc09fab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &4482565788254893682
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245267764376666970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.41
+  m_Height: 1.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1001 &258640930385066249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,6 +102,10 @@ PrefabInstance:
     - target: {fileID: 1000011841440206, guid: 0ed203d298c050b49bfabe788790e1c2, type: 3}
       propertyPath: m_Name
       value: 4 Side Diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011841440206, guid: 0ed203d298c050b49bfabe788790e1c2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4000012861777782, guid: 0ed203d298c050b49bfabe788790e1c2, type: 3}
       propertyPath: m_RootOrder

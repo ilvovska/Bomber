@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BombController : MonoBehaviour, IExplodable
 {
-   [SerializeField] private LayerMask layerMask;
+    [SerializeField] private LayerMask layerMask;
     [SerializeField] private float exploseTime;
 
-    private float radius=1;
+    private float radius = 1;
     private bool exploded;
 
     public void Initialize(Action onExplode)
@@ -31,9 +31,9 @@ public class BombController : MonoBehaviour, IExplodable
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius, layerMask);
         foreach (var hitCollider in hitColliders)
         {
-            hitCollider.SendMessage("Explode");
+            hitCollider.GetComponent<IExplodable>()?.Explode();
         }
-        
+
         Destroy(gameObject);
     }
 }
