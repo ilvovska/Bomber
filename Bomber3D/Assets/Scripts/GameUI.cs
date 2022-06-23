@@ -9,6 +9,7 @@ public class GameUI: MonoBehaviour
 
     [SerializeField] private Button bombButton;
     [SerializeField] private Joystick joystick;
+    
     public Joystick Joystick => joystick;
 
     private void Start()

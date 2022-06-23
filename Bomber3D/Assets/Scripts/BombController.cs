@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class BombController : MonoBehaviour, IExplodable
@@ -9,18 +9,13 @@ public class BombController : MonoBehaviour, IExplodable
 
     private float radius = 1;
     private bool exploded;
+    private Action onExplode;
 
-    public void Initialize(Action onExplode)
+    public async Task Initialize(Action onExplode)
     {
-        StartCoroutine(Explosion(onExplode));
-    }
-
-    private IEnumerator Explosion(Action onExplode)
-    {
-        yield return new WaitForSeconds(exploseTime);
-
+        this.onExplode = onExplode;
+        await Task.Delay(TimeSpan.FromSeconds(exploseTime));
         Explode();
-        onExplode.Invoke();
     }
 
     public void Explode()
@@ -33,7 +28,8 @@ public class BombController : MonoBehaviour, IExplodable
         {
             hitCollider.GetComponent<IExplodable>()?.Explode();
         }
-
+        
+        onExplode.Invoke();
         Destroy(gameObject);
     }
 }

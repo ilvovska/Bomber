@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1f9485ac329b04892b4ec157fc203a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 1817487406404606632}
+  movement: {fileID: 1817487406404606632}
 --- !u!114 &1817487406404606632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5531c54dfa9cfc447b4384184d88c2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 0.5
+  moveTime: 0.2
   layers:
     serializedVersion: 2
     m_Bits: 192

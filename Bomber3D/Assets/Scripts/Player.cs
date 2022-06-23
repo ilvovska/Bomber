@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 public class Player : Deadly
 {
-    [FormerlySerializedAs("movementController")] [SerializeField] private Movement movement;
+    [SerializeField] private Movement movement;
 
     private Joystick joystick;
 

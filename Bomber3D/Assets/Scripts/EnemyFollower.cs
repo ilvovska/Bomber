@@ -3,7 +3,8 @@
 public class EnemyFollower : Enemy
 {
     [SerializeField] private Movement movement;
-    [SerializeField] private Transform player;
+    
+    private Transform player;
 
     private void Update()
     {
@@ -12,4 +13,6 @@ public class EnemyFollower : Enemy
         var direction = (transform.position - player.position).normalized;
         movement.Move(Direction.Vector2ToDirection(direction));
     }
+
+    public void SetPlayerTransform(Transform playerTransform) => player = playerTransform;
 }

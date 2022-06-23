@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 896
   exploseTime: 2
 --- !u!136 &4543654525040480720
 CapsuleCollider:

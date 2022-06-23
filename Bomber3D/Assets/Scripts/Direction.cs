@@ -30,12 +30,12 @@ public static class Direction
         var axis = (int)(Vector2.Angle(direction, Vector2.up) / 60);
         var right = direction.x > 0;
 
-        switch (axis)
+        return axis switch
         {
-            case 0: return right ? Type.Hour1 : Type.Hour11;
-            case 1:return right ? Type.Hour3 : Type.Hour9;
-            case 2:return right ?Type.Hour5 : Type.Hour7;
-            default: return Type.Hour1;
-        }
+            0 => right ? Type.Hour1 : Type.Hour11,
+            1 => right ? Type.Hour3 : Type.Hour9,
+            2 => right ? Type.Hour5 : Type.Hour7,
+            _ => Type.Hour1
+        };
     }
 }

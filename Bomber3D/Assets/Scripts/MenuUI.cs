@@ -20,8 +20,5 @@ public class MenuUI : MonoBehaviour
 
     private void OnStart() => OnStartClick.Invoke();
 
-    public void SetWinText(bool winLastGame)
-    {
-        text.text = winLastGame ? winText : loseText;
-    }
+    public void SetWinText(bool winLastGame) => text.text = winLastGame ? winText : loseText;
 }
