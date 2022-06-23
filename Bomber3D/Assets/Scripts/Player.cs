@@ -1,10 +1,10 @@
 using SimpleInputNamespace;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Player : Deadly
 {
     [SerializeField] private Movement movement;
+    [SerializeField] private int enemyLayer;
 
     private Joystick joystick;
 
@@ -14,5 +14,11 @@ public class Player : Deadly
     {
         if (!movement.IsMoving && joystick.Value.magnitude > 0.5)
             movement.Move(Direction.Vector2ToDirection(joystick.Value));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == enemyLayer)
+           Destroy(gameObject);
     }
 }
